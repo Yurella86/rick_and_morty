@@ -1,0 +1,29 @@
+li {
+    list-style-type: none;
+}
+
+.wrapper-characters {
+    .header-item {
+        ul {
+            width: 90%;
+            height: 30px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            li {
+                select {
+                    height: 100%;
+                    width: 200px;
+                    border-radius: 2px;
+                    color: black;
+                }
+            }
+        }
+    }
+    .items-characters {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
