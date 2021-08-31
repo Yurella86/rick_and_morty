@@ -1,9 +1,15 @@
 import './item.scss'
 
-function Item() {
+function Item({ male, name, image }) {
+    console.log(`${name}, ${male}`);
     return (
         <div className="wrapper-item">
-            wwewewedwc
+            <div className="photo-item">
+                <img src={`${image}`} alt="" />
+            </div>
+            <div className="name">
+                {name}
+            </div>
         </div>
     )
 }

@@ -1,0 +1,53 @@
+.wrapper-episode {
+    table {
+        width: 100%;
+        border: 2px solid green;
+        border-collapse: collapse;
+        border-radius: 10px;
+        tr {
+            border-bottom: 1px solid rgb(0, 209, 17);
+            margin-top: 10px;
+            td {
+                padding: 10px;
+                &.name {
+                    width: 300px;
+                    font-size: 18px;
+                }
+                &.episode {
+                    width: 300px;
+                }
+            }
+        }
+    }
+    .pagination {
+        width: 450px;
+        margin: 30px auto;
+        text-align: center;
+        ul {
+            display: block;
+            li {
+                display: inline-block;
+                border: 1px solid rgb(224, 224, 224);
+                color: rgb(0, 0, 0);
+                cursor: pointer;
+                margin-right: 3px;
+                border-radius: 4px;
+                margin-bottom: 5px;
+                overflow: hidden;
+                a {
+                    padding: 2px 5px;
+                    display: inline-block;
+                    color: rgb(255, 255, 255);
+                    outline: none;
+                }
+            }
+            .active {
+                a {
+                    background-color: rgb(5, 194, 207);
+                    color: white;
+                    outline: none;
+                }
+            }
+        }
+    }
+}

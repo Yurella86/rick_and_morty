@@ -1,6 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
 .wrapper-item {
     margin: 30px;
     width: 135px;
     height: 220px;
-    background-color: grey;
+    border: 2px solid #000000;
+    box-shadow: 2px -1px 5px 2px rgb(255, 255, 255);
+    border-radius: 10px;
+    background-color: #000000;
+    overflow: hidden;
+    .photo-item {
+        width: 100%;
+        background-color: turquoise;
+        height: 160px;
+        img {
+            width: 135px;
+            height: inherit;
+            object-fit: fill;
+        }
+    }
+    .name {
+        height: 50px;
+        margin: 5px;
+        line-height: 16px;
+        font-size: 16px;
+        text-align: center;
+        font-family: "Architects Daughter", cursive;
+    }
 }
