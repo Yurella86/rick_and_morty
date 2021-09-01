@@ -1,6 +1,6 @@
-import './item.scss'
+import './itemCharacters.scss'
 
-function Item({ male, name, image }) {
+function ItemCharacters({ male, name, image }) {
     console.log(`${name}, ${male}`);
     return (
         <div className="wrapper-item">
@@ -14,4 +14,4 @@ function Item({ male, name, image }) {
     )
 }
 
-export default Item;
+export default ItemCharacters;

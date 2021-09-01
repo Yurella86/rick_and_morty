@@ -25,4 +25,7 @@ export default class QueryService {
     getLocations() {
         return this.getResourse(`/location/`);
     }
+    getLocationsPage(number) {
+        return this.getResourse(`/location/?page=${number + 1}`);
+    }
 }

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import Item from "./item/item";
-import './Characters.scss'
+import './characters.scss'
 import ReactPaginate from 'react-paginate';
-import QueryService from './../../servises/getApi'
+import QueryService from './../../../services/getApi'
+import ItemCharacters from "./itemCharacters/itemCharacters";
 
 
 function Characters() {
@@ -89,14 +89,14 @@ function Characters() {
             <div className="items-characters">
                 {filtered.length ?
                     filtered.map(el => {
-                        return <Item
+                        return <ItemCharacters
                             key={el.id}
                             male={el.gender}
                             name={el.name}
                             image={el.image} />
                     }) :
                     items.map(el => {
-                        return <Item
+                        return <ItemCharacters
                             key={el.id}
                             male={el.gender}
                             name={el.name}

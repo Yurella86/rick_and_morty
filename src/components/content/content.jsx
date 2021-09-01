@@ -1,8 +1,8 @@
 import { Route } from "react-router-dom";
-import Characters from "../characters/Characters";
-import Episodes from "../episodes/Episodes";
-import Locations from "../locations/Locations";
-import MyWatchList from "../my_watch_list/My_watch_list";
+import Characters from "./characters/characters";
+import Episodes from "./episodes/Episodes";
+import Locations from "./locations/Locations";
+import MyWatchList from "./my_watch_list/My_watch_list";
 import "./content.scss"
 
 function Content() {

@@ -1,0 +1,81 @@
+.wrapper-locations {
+    .header-locations {
+        text-align: start;
+        width: 80%;
+        margin: 10px auto;
+        ul {
+            height: 30px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            li {
+                label {
+                    padding-left: 15px;
+                }
+                input {
+                    margin-left: 5px;
+                    outline: none;
+                }
+            }
+        }
+    }
+    .items-locations {
+        .header-items {
+            display: flex;
+            height: 30px;
+            line-height: 30px;
+            padding-left: 10px;
+            border: 2px solid rgba(81, 255, 0, 0.616);
+            border-bottom: none;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            background-color: rgba(9, 255, 0, 0.212);
+            .name-item {
+                width: 300px;
+            }
+            .type-item {
+                text-align: start;
+                width: 300px;
+            }
+            .dimension-item {
+            }
+        }
+    }
+    .items-characters {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .pagination {
+        width: 450px;
+        margin: 0 auto;
+        text-align: center;
+        ul {
+            display: block;
+            li {
+                display: inline-block;
+                border: 1px solid rgb(224, 224, 224);
+                color: rgb(0, 0, 0);
+                cursor: pointer;
+                margin-right: 3px;
+                border-radius: 4px;
+                margin-bottom: 5px;
+                overflow: hidden;
+                a {
+                    padding: 2px 5px;
+                    display: inline-block;
+                    color: rgb(255, 255, 255);
+                    outline: none;
+                }
+            }
+            .active {
+                a {
+                    background-color: rgb(5, 194, 207);
+                    color: white;
+                    outline: none;
+                }
+            }
+        }
+    }
+}
