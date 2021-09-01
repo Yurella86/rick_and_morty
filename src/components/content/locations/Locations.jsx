@@ -5,51 +5,72 @@ import ItemsLocations from './itemsLocations/ItemsLocations';
 import './Locations.scss'
 
 function Locations() {
-
     const locations = new QueryService();
 
     const [items, setItems] = useState([])
     const [sorted, setSorted] = useState([])
+    const [filterName, setFilterName] = useState('')
+    const [filterType, setFilterType] = useState('')
+    const [filterDimension, setFilterDimension] = useState('')
     const [pageCount, setPageCount] = useState()
 
     function changePage(page) {
         locations.getLocationsPage(page)
             .then((body) => {
+                setFilterName('')
+                setFilterType('')
+                setFilterDimension('')
                 setItems(body.results)
                 setPageCount(body.info.pages)
+                console.log('changePage=>', items)
             })
     }
 
-    function selectFilterName(f) {
-        if (f) {
-            const result = items.filter(el => el.name.includes(f.target.value))
+    function selectFilterName() {
+        if (filterName) {
+            const result = items.filter(el => el.name.toUpperCase().includes(filterName.toUpperCase()))
             setSorted(result)
-            console.log(sorted);
         } else {
             setSorted(sorted.length = 0)
-            console.log(sorted);
         }
+    }
 
+    function selectFilterType() {
+        if (filterType) {
+            const result = items.filter(el => el.type.toUpperCase().includes(filterType.toUpperCase()))
+            setSorted(result)
+        } else {
+            setSorted(sorted.length = 0)
+        }
     }
-    function selectFilterType(f) {
-        const result = items.filter(el => el.type.includes(f.target.value))
-        setSorted(result)
-        console.log(result);
-    }
+
     function selectFilterDimension(f) {
-        const result = items.filter(el => el.dimension.includes(f.target.value))
-        setSorted(result)
-        console.log(result);
+        if (filterDimension) {
+            const result = items.filter(el => el.dimension.toUpperCase().includes(filterDimension.toUpperCase()))
+            setSorted(result)
+        } else {
+            setSorted(sorted.length = 0)
+        }
     }
-
     useEffect(() => {
         locations.getLocations()
             .then((body) => {
                 setItems(body.results)
                 setPageCount(body.info.pages)
-                console.log(body);
             })
     }, [])
+
+    useEffect(() => {
+        selectFilterName()
+    }, [filterName])
+
+    useEffect(() => {
+        selectFilterType()
+    }, [filterType])
+
+    useEffect(() => {
+        selectFilterDimension()
+    }, [filterDimension])
 
     return (
         <div className="wrapper-locations">
@@ -57,18 +78,15 @@ function Locations() {
                 <ul>
                     <li>
                         <label for="name">Name</label>
-                        <input type="text" id="name" onChange={(e) => selectFilterName(e)} />
-
+                        <input type="text" id="name" value={filterName} onChange={(e) => setFilterName(e.target.value)} />
                     </li>
                     <li>
                         <label for="type">Type</label>
-                        <input type="text" id="type" onChange={(e) => selectFilterType(e)} />
-
+                        <input type="text" id="type" value={filterType} onChange={(e) => setFilterType(e.target.value)} />
                     </li>
                     <li>
                         <label for="dimension">Dimension</label>
-                        <input type="text" id="dimension" onChange={(e) => selectFilterDimension(e)} />
-
+                        <input type="text" id="dimension" value={filterDimension} onChange={(e) => setFilterDimension(e.target.value)} />
                     </li>
                 </ul>
             </div>
