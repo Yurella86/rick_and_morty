@@ -3,6 +3,7 @@ import './characters.scss'
 import ReactPaginate from 'react-paginate';
 import QueryService from './../../../services/getApi'
 import ItemCharacters from "./itemCharacters/itemCharacters";
+import { NavLink } from "react-router-dom";
 
 
 function Characters() {
@@ -63,7 +64,7 @@ function Characters() {
                     <li>
                         <select name="species" id="species" placeholder="species" onChange={handleFilterSpecies}>
                             <option value="" disabled selected hidden>Species </option>
-                            <option value="Human">Human</option>
+                            <option value="Human"><NavLink to='/character/?species=Human' >Human</NavLink></option>
                             <option value="Alien">Alien</option>
                             <option value="unknown">unknown</option>
 

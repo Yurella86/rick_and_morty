@@ -20,6 +20,7 @@
         }
     }
     .items-locations {
+        margin-bottom: 50px;
         .header-items {
             display: flex;
             height: 30px;
@@ -29,7 +30,7 @@
             border-bottom: none;
             border-top-left-radius: 5px;
             border-top-right-radius: 5px;
-            background-color: rgba(9, 255, 0, 0.212);
+            background-color: rgba(9, 255, 0, 0.336);
             .name-item {
                 width: 300px;
             }
@@ -39,6 +40,30 @@
             }
             .dimension-item {
             }
+        }
+        .not-found {
+            width: 100%;
+            height: auto;
+            margin: 60px auto;
+            text-align: center;
+            font-size: 30px;
+            .clear {
+                width: max-content;
+                margin: 0 auto;
+                line-height: 30px;
+                padding: 2px 5px;
+                border: 2px solid rgba(81, 255, 0, 0.616);
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        }
+        .footer-items {
+            height: 20px;
+            border: 2px solid rgba(81, 255, 0, 0.616);
+            border-top: none;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            background-color: rgba(9, 255, 0, 0.212);
         }
     }
     .items-characters {

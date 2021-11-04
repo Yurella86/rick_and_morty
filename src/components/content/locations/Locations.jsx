@@ -8,6 +8,7 @@ function Locations() {
     const locations = new QueryService();
 
     const [items, setItems] = useState([])
+    const [show, setShowContent] = useState(true)
     const [sorted, setSorted] = useState([])
     const [filterName, setFilterName] = useState('')
     const [filterType, setFilterType] = useState('')
@@ -29,6 +30,14 @@ function Locations() {
     function selectFilterName() {
         if (filterName) {
             const result = items.filter(el => el.name.toUpperCase().includes(filterName.toUpperCase()))
+            if (result.length) {
+                setShowContent(true)
+                setSorted(result)
+            } else {
+                setShowContent(false)
+                console.log('result false');
+
+            }
             setSorted(result)
         } else {
             setSorted(sorted.length = 0)
@@ -38,6 +47,12 @@ function Locations() {
     function selectFilterType() {
         if (filterType) {
             const result = items.filter(el => el.type.toUpperCase().includes(filterType.toUpperCase()))
+            if (result.length) {
+                setShowContent(true)
+                setSorted(result)
+            } else {
+                setShowContent(false)
+            }
             setSorted(result)
         } else {
             setSorted(sorted.length = 0)
@@ -47,6 +62,12 @@ function Locations() {
     function selectFilterDimension(f) {
         if (filterDimension) {
             const result = items.filter(el => el.dimension.toUpperCase().includes(filterDimension.toUpperCase()))
+            if (result.length) {
+                setShowContent(true)
+                setSorted(result)
+            } else {
+                setShowContent(false)
+            }
             setSorted(result)
         } else {
             setSorted(sorted.length = 0)
@@ -96,15 +117,20 @@ function Locations() {
                     <div className="type-item">Type</div>
                     <div className="dimension-item">Dimension</div>
                 </div>
-                {!sorted.length ?
-                    items.map((el) => <ItemsLocations
-                        name={el.name}
-                        type={el.type}
-                        dimension={el.dimension} />) :
-                    sorted.map((el) => <ItemsLocations
-                        name={el.name}
-                        type={el.type}
-                        dimension={el.dimension} />)}
+                {show ?
+                    !sorted.length ?
+                        items.map((el) => <ItemsLocations
+                            name={el.name}
+                            type={el.type}
+                            dimension={el.dimension} />) :
+                        sorted.map((el) => <ItemsLocations
+                            name={el.name}
+                            type={el.type}
+                            dimension={el.dimension} />) :
+                    <div className="not-found">Not Found!
+                    </div>}
+                <div className="footer-items">
+                </div>
             </div>
             <div className="pagination">
                 <ReactPaginate

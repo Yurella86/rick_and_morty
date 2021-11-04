@@ -8,6 +8,7 @@ import Sidebar from './sidebar/sidebar';
 
 
 function App() {
+
   return (<BrowserRouter>
     <div className="background">
       <div className="wrapper">
